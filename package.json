@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "dotenvx run --env-file=.env -- node app.js",
-    "dev": "dotenvx run --env-file=.env.development -- node app.js"
+    "dev": "dotenvx run --env-file=.env.development -- node app.js",
+    "prod": "NODE_ENV=Production dotenvx run --env-file=.env.production -- node app.js"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^0.44.2",
