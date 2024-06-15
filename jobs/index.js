@@ -1,10 +1,14 @@
 module.exports = [
     {
-      name: 'test'
+        name: 'preflight'
     },
     {
-      name: 'bot',
-      interval: '1h',
-      timeout: 0
+        name: 'heartbeat',
+        interval: '5s'
+    },
+    {
+        name: 'bot',
+        interval: '1h',
+        timeout: 0
     },
 ]

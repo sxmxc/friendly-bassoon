@@ -15,15 +15,6 @@ const logger = new Axe({
 const cabin = new Cabin({logger})
 
 const bree = new Bree({
-  //
-  // NOTE: by default the `logger` is set to `console`
-  // however we recommend you to use CabinJS as it
-  // will automatically add application and worker metadata
-  // to your log output, and also masks sensitive data for you
-  // <https://cabinjs.com>
-  //
-  // NOTE: You can also pass `false` as `logger: false` to disable logging
-  //
   logger: cabin,
 
   //
@@ -36,25 +27,16 @@ const bree = new Bree({
   // See the "Job Options" section below in this README
   // for the complete list of job options and configurations
   //
-  // jobs: [
-  //   {
-  //     name: 'test'
-  //   },
-  //   {
-  //     name: 'bot',
-  //     interval: '1h',
-  //     timeout: 0
-  //   },
-  // ]
+  // jobs: []
 });
 
-bree.on('worker created', (name) => {
-  cabin.info('worker created', name);
-});
+// bree.on('worker created', (name) => {
+//   cabin.info('worker created', name);
+// });
 
-bree.on('worker deleted', (name) => {
-  cabin.info('worker deleted', name);
-});
+// bree.on('worker deleted', (name) => {
+//   cabin.info('worker deleted', name);
+// });
 
 const graceful = new Graceful({ brees: [bree] });
 graceful.listen();
