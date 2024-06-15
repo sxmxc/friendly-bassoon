@@ -3,6 +3,12 @@
 
 Scheduable and configurable Ghost content creation bot that leverages Ollama
 
+![GitHub branch status](https://img.shields.io/github/checks-status/sxmxc/friendly-bassoon/main?label=main)
+
+![Docker Automated build](https://img.shields.io/docker/automated/sxmxc/ghostbot)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
 
 ## Quick Start
 
@@ -75,11 +81,3 @@ You can also pass in your .env file
 ```bash
   docker run --env-file ./.env.production -it --init --rm sxmxc/ghostbot
 ```
-    
-## Badges
-
-![GitHub branch status](https://img.shields.io/github/checks-status/sxmxc/friendly-bassoon/main?label=main)
-
-![Docker Automated build](https://img.shields.io/docker/automated/sxmxc/ghostbot)
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
