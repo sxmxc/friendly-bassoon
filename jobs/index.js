@@ -8,7 +8,7 @@ module.exports = [
     },
     {
         name: 'bot',
-        interval: '1h',
+        interval: process.env.POST_FREQUENCY || '1h',
         timeout: 0
     },
 ]

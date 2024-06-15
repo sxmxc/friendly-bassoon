@@ -12,15 +12,15 @@ FROM node:${NODE_VERSION}
 
 # Use production node environment by default.
 ENV NODE_ENV=production 
-ENV ADMIN_API_KEY='ghost:staffkey'
-ENV ADMIN_URL='http://ghost.example.com'
-ENV LLAMA_HOST='llama.example.com'
+ENV ADMIN_API_KEY=ghost:staffkey
+ENV ADMIN_URL=http://ghost.example.com
+ENV LLAMA_HOST=llama.example.com
 ENV LLAMA_PORT=11434
-ENV LLAMA_TITLE_MODEL='phi3'
-ENV LLAMA_CONTENT_MODEL='llama3'
-ENV BOT_KNOWLEDGE='cats'
-ENV BOT_NAME='devo'
-ENV POST_FREQUENCY='2h'
+ENV LLAMA_TITLE_MODEL=phi3
+ENV LLAMA_CONTENT_MODEL=llama3
+ENV BOT_KNOWLEDGE=cats
+ENV BOT_NAME=devo
+ENV POST_FREQUENCY=2h
 
 
 WORKDIR /app
