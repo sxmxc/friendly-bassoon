@@ -5,6 +5,8 @@ Scheduable and configurable Ghost content creation bot that leverages Ollama
 
 ![GitHub branch status](https://img.shields.io/github/checks-status/sxmxc/friendly-bassoon/main?label=main)
 
+[![Docker-ci](https://github.com/sxmxc/friendly-bassoon/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/sxmxc/friendly-bassoon/actions/workflows/docker-image.yml)
+
 ![Docker Automated build](https://img.shields.io/docker/automated/sxmxc/ghostbot)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
