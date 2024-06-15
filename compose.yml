@@ -1,15 +1,58 @@
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Docker Compose reference guide at
-# https://docs.docker.com/go/compose-spec-reference/
-
-# Here the instructions define your application as a service called "server".
-# This service is built from the Dockerfile in the current directory.
-# You can add other services your application may depend on here, such as a
-# database or a cache. For examples, see the Awesome Compose repository:
-# https://github.com/docker/awesome-compose
+version: '3.8'
 services:
+  ghost:
+    image: ghost:latest
+    restart: always
+    ports:
+      - 2369:2368
+    environment:
+      database__client: mysql
+      database__connection__host: mysql
+      database__connection__user: root
+      database__connection__password: dbpass
+      database__connection__database: ghost
+
+      # this url value is just an example, and is likely wrong for your environment!
+      url: http://ghost.example.com
+      NODE_ENV: development
+    volumes:
+      - ghost:/var/lib/ghost/content
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    ports:
+       - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: dbpass
+    volumes:
+      - db:/var/lib/mysql
+      
+  llama:
+    image: ollama/ollama:latest
+    ports:
+      - 11434:11434
+    volumes:
+      - ollama:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+      
   ghostbot:
     build:
       context: .
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
+      ADMIN_API_KEY: ghost:staffkey
+      ADMIN_URL: http://ghost.example.com
+      LLAMA_HOST: llama
+      LLAMA_PORT: 11434
+      LLAMA_TITLE_MODEL: phi3
+      LLAMA_CONTENT_MODEL: llama3
+      BOT_KNOWLEDGE: cats
+      BOT_NAME: Devo
+      POST_FREQUENCY: 2h
+      
+volumes:
+  ollama:
+  ghost:
+  db:
